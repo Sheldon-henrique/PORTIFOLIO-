@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SHELDON HENRIQUE</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>Atualmente no 3º semestre de Análise e Desenvolvimento de Sistemas, busco oportunidades para aplicar e aprimorar minhas habilidades em JavaScript, HTML, CSS e MySQL. Sou comunicativo, organizado e trabalho bem em equipe. Com experiência no comércio e em vendas, estou em busca de um estágio para crescer e contribuir na área de TI.</p>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>💻 HTML, CSS, JavaScript</li>
+            <li>🗄️ MySQL</li>
+            <li>⚙️ Lógica de Programação</li>
+        </ul>
+    </section>
+
+    <section id="projetos">
+        <h2>Principais projetos</h2>
+        <div id="lista-projetos"></div>
+
+        <!-- Botão para abrir a Lista de Tarefas -->
+        <button onclick="mostrarListaTarefas()">Ver Lista de Tarefas</button>
+        
+        <!-- Área onde a Lista de Tarefas será carregada -->
+        <div id="lista-container" style="display: none;"></div>
+    </section>
+
+    <section id="certificados">
+        <h2>Certificados</h2>
+        <p>• COMPETÊNCIA TRANSVERSAL - TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO (SENAI)</p>
+        <p>• INTRODUÇÃO À PROGRAMAÇÃO ORIENTADA A OBJETOS (Bradesco)</p>
+        <p>• POR DENTRO DA SEGURANÇA CIBERNÉTICA (Bradesco)</p>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <p>Em breve, artigos sobre tecnologia e programação.</p>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="form-contato">
+            <p>Email: <a href="mailto:sheldonhenrique1906@gmail.com">sheldonhenrique1906@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sheldon-henrique-04229a32b" target="_blank">Meu LinkedIn</a></p>
+            <input type="text" name="nome" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu E-mail" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Botão de Download do Currículo -->
+    <section id="curriculo">
+        <h2>Baixar Currículo</h2>
+        <a href="corriculo sheldon.pdf" download="Sheldon_Henrique_Curriculo.pdf">
+            <button>📄 Baixar Currículo</button>
+        </a>
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+        function mostrarListaTarefas() {
+            const container = document.getElementById("lista-container");
+
+            if (container.innerHTML === "") {
+                fetch("todo-list.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        container.innerHTML = data;
+                        container.style.display = "block";
+                        ajustarCSSLista();
+                    });
+            } else {
+                container.style.display = container.style.display === "none" ? "block" : "none";
+            }
+        }
+
+        function ajustarCSSLista() {
+            const listaContainer = document.querySelector("#lista-container .container");
+            if (listaContainer) {
+                listaContainer.style.width = "100%";
+            }
+        }
+    </script>
+</body>
+</html>

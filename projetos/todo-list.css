@@ -1,0 +1,79 @@
+/* defina o estilo do copo da pagina */
+body{
+    font-size: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* estiliza o cantainer principal */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+/* estiliza o titulo */
+h1 {
+    font-size: 20px;
+    color: #333;
+}
+/* estiliza o grupo de input do botão */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+/* Estiliza o campo de entrada de texto */
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estiliza o botão de adicionar */
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Estiliza a lista de tarefas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estiliza cada item da lista */
+li {
+    background: #e2e2e2;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estiliza o botão de remover tarefa */
+li button {
+    background: red;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+}
